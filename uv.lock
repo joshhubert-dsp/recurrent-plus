@@ -90,7 +90,7 @@ wheels = [
 ]
 
 [[package]]
-name = "recurrent"
+name = "recurrent-plus"
 version = "1.0.0"
 source = { editable = "." }
 dependencies = [

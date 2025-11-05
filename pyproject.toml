@@ -1,5 +1,5 @@
 [project]
-name = "recurrent"
+name = "recurrent-plus"
 version = "1.0.0"
 description = "Natural language parsing and deparsing of recurring events"
 readme = "README.md"
@@ -25,7 +25,7 @@ dependencies = [
 
 [project.urls]
 Repository = "http://github.com/kvh/recurrent"
-Fork = "https://github.com/joshhubert-dsp/recurrent"
+Fork = "https://github.com/joshhubert-dsp/recurrent-plus"
 
 
 [tool.setuptools]
