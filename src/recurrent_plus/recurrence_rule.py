@@ -15,7 +15,7 @@ from dateutil.rrule import (
 from devtools import pformat
 from loguru import logger
 
-from recurrent.event_parser import RE_STARTING, RecurringEvent
+from recurrent_plus.event_parser import RE_STARTING, RecurringEvent
 
 _TIME_ATTRS = ("_byhour", "_byminute", "_bysecond")
 _TIME_FREQS = {HOURLY, MINUTELY, SECONDLY}
