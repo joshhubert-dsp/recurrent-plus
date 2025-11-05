@@ -1,4 +1,4 @@
-from recurrent.event_parser import RecurringEvent
+from recurrent_plus.event_parser import RecurringEvent
 
 
 def parse(s, now=None):

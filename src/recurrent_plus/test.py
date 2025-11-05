@@ -3,9 +3,9 @@ import unittest
 
 from dateutil import rrule
 
-from recurrent import format as rformat
-from recurrent import parse as rparse
-from recurrent.event_parser import RecurringEvent
+from recurrent_plus import format as rformat
+from recurrent_plus import parse as rparse
+from recurrent_plus.event_parser import RecurringEvent
 
 NOW = datetime.datetime(2010, 1, 1)
 TOMORROW = NOW + datetime.timedelta(days=1)

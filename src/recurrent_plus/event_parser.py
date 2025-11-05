@@ -14,7 +14,7 @@ except ImportError:  # pragma nocover
 
 from dateutil.rrule import rrulestr
 
-from recurrent.constants import *
+from recurrent_plus.constants import *
 
 DEBUG = False
 

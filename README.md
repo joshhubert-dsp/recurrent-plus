@@ -67,7 +67,7 @@ pip install recurrent
 
 ```python
 >>> import datetime
->>> from recurrent.event_parser import RecurringEvent
+>>> from recurrent_plus.event_parser import RecurringEvent
 >>> r = RecurringEvent(now_date=datetime.datetime(2010, 1, 1))
 >>> r.parse('every day starting next tuesday until feb')
 'DTSTART:20100105\nRRULE:FREQ=DAILY;INTERVAL=1;UNTIL=20100201'

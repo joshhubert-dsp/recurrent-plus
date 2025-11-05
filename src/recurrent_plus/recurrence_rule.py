@@ -224,27 +224,3 @@ def rruleset_to_serializable(rrs: rruleset) -> dict:
 #         kwargs["bymonth"] = d["bymonth"]
 #     # ...etc
 #     return rrule(**kwargs)
-
-
-"""
->>> import datetime
->>> from recurrent.event_parser import RecurringEvent
->>> r = RecurringEvent(now_date=datetime.datetime(2010, 1, 1))
->>> r.parse('every day starting next tuesday until feb')
-'DTSTART:20100105\nRRULE:FREQ=DAILY;INTERVAL=1;UNTIL=20100201'
->>> r.is_recurring
-True
->>> r.get_params()
-{'dtstart': '20100105', 'freq': 'daily', 'interval': 1, 'until': '20100201'}
-
->>> r.parse('feb 2nd')
-datetime.datetime(2010, 2, 2, 0, 0)
-
->>> r.parse('not a date at all')
-
->>> r.format('DTSTART:20100105\nRRULE:FREQ=DAILY;INTERVAL=1;UNTIL=20100201')
-'daily from Tue Jan 5, 2010 to Mon Feb 1, 2010'
->>> r.format(r.parse('fridays twice'))
-'every Fri twice'
->>>
-"""
