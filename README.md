@@ -10,7 +10,7 @@ modern python updates (requires 3.10+) and quality-of-life improvements.
     computation, if available.
 -   recurrence_rule.RecurrenceRule convenience class.
 
-ORIGINAL README BELOW:
+## ORIGINAL README:
 
 Recurrent is a python library for natural language parsing and formatting of dates and recurring
 events. It turns strings like "every tuesday and thurs until next month"
