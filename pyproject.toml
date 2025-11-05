@@ -1,0 +1,40 @@
+[project]
+name = "recurrent"
+version = "1.0.0"
+description = "Natural language parsing and deparsing of recurring events"
+readme = "README.md"
+requires-python = ">=3.10.1"
+license = { text = "BSD" }
+authors = [
+  { name = "Ken Van Haren", email = "kvh@science.io"},
+  {name = "joshhubert-dsp", email = "102703352+joshhubert-dsp@users.noreply.github.com"}
+]
+keywords = ["calendar", "recurring", "date", "event", "NLP"]
+classifiers = [
+  "Natural Language :: English",
+  "Topic :: Text Processing :: Linguistic",
+  "License :: OSI Approved :: BSD License",
+]
+
+dependencies = [
+  "devtools>=0.12.2",
+  "loguru>=0.7.3",
+  "parsedatetime>=2.6",
+  "python-dateutil>=2.9.0.post0",
+]
+
+[project.urls]
+Repository = "http://github.com/kvh/recurrent"
+Fork = "https://github.com/joshhubert-dsp/recurrent"
+
+
+[tool.setuptools]
+zip-safe = false
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

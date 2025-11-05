@@ -1,52 +1,70 @@
-# Recurrent
+# Recurrent+
+
+This is a fork of the excellent [recurrent][0] package by Ken Van Haren, with some
+modern python updates (requires 3.10+) and quality-of-life improvements.
+
+-   Additional regexes added, and a bit of clean-up.
+-   EventParser docstrings.
+-   Proper timezone handling (optional).
+-   EventParser.dtstart is preferred over EventParser.now_date for most bounds
+    computation, if available.
+-   recurrence_rule.RecurrenceRule convenience class.
+
+ORIGINAL README BELOW:
+
 Recurrent is a python library for natural language parsing and formatting of dates and recurring
 events. It turns strings like "every tuesday and thurs until next month"
 into [RFC-compliant RRULES][1], to be fed into a calendar api or [python-dateutil's][2]
-rrulestr.  It will also accept such rrules and return a natural language representation of them.
+rrulestr. It will also accept such rrules and return a natural language representation of them.
 
 ```sh
 pip install recurrent
 ```
 
 ## Examples
+
 ### Date times
-* next tuesday
-* tomorrow
-* in an hour
-* in 15 mins
-* Mar 4th at 9am
-* 3rd Thu in Apr at 10 o'clock
-* 40th day of 2020
+
+-   next tuesday
+-   tomorrow
+-   in an hour
+-   in 15 mins
+-   Mar 4th at 9am
+-   3rd Thu in Apr at 10 o'clock
+-   40th day of 2020
 
 ### Recurring events
-* on weekdays
-* every fourth of the month from jan 1 2010 to dec 25th 2020
-* each thurs until next month
-* once a year on the fourth thursday in november
-* tuesdays and thursdays at 3:15
-* wednesdays at 9 o'clock
-* fridays at 11am
-* daily except in June
-* daily except on June 23rd and July 4th
-* every monday except each 2nd monday in March
-* fridays twice
-* fridays 3x
-* every other friday for 5 times
-* every 3 fridays from november until february
-* fridays starting in may for 10 occurrences
-* tuesdays for the next six weeks
-* every Mon-Wed for the next 2 months
-* every Mon thru Wed for the next year
-* every other Fri for the next three years
-* monthly on the first and last instance of wed and fri
-* every Tue and Fri in week 14
-* every year on Dec 25
+
+-   on weekdays
+-   every fourth of the month from jan 1 2010 to dec 25th 2020
+-   each thurs until next month
+-   once a year on the fourth thursday in november
+-   tuesdays and thursdays at 3:15
+-   wednesdays at 9 o'clock
+-   fridays at 11am
+-   daily except in June
+-   daily except on June 23rd and July 4th
+-   every monday except each 2nd monday in March
+-   fridays twice
+-   fridays 3x
+-   every other friday for 5 times
+-   every 3 fridays from november until february
+-   fridays starting in may for 10 occurrences
+-   tuesdays for the next six weeks
+-   every Mon-Wed for the next 2 months
+-   every Mon thru Wed for the next year
+-   every other Fri for the next three years
+-   monthly on the first and last instance of wed and fri
+-   every Tue and Fri in week 14
+-   every year on Dec 25
 
 ### Messy strings
-* Please schedule the meeting for every other tuesday at noon
-* Set an alarm for next tuesday at 11pm
+
+-   Please schedule the meeting for every other tuesday at noon
+-   Set an alarm for next tuesday at 11pm
 
 ## Usage
+
 ```python
 >>> import datetime
 >>> from recurrent.event_parser import RecurringEvent
@@ -71,6 +89,7 @@ datetime.datetime(2010, 2, 2, 0, 0)
 ```
 
 You can then use python-dateutil to work with the recurrence rules.
+
 ```python
 >>> from dateutil import rrule
 >>> rr = rrule.rrulestr(r.get_RFC_rrule())
@@ -81,6 +100,7 @@ datetime.datetime(2010, 1, 26, 0, 0)
 ```
 
 You can specify a (custom) localisation to change the parsing behaviour of `parsedatetime`
+
 ```python
 consts = parsedatetime.Constants(localeID='en_US', usePyICU=False)
 consts.use24 = True
@@ -89,6 +109,7 @@ r = RecurringEvent(now_date=datetime.datetime(2010, 1, 1), parse_constants=const
 ```
 
 ## Dependencies
+
 Recurrent uses [parsedatetime][3] to parse dates and [python.dateutil][2] if available to optimize some results.
 
 ## Things it can't do
@@ -96,15 +117,18 @@ Recurrent uses [parsedatetime][3] to parse dates and [python.dateutil][2] if ava
 Recurrent is regrettably quite U.S. (and completely english) centric. Contributions from other perspectives are welcome :)
 
 ## Credits
+
 Recurrent is inspired by the similar Ruby library Tickle by Joshua
 Lippiner. It also uses the parsedatetime library for fuzzy human date
-parsing.  The handling of COUNT, BYSETPOS, BYWEEKNO, EXDATE and EXRULE,
-and the format function was supplied by Joe Cool snoopyjc@gmail.com 
+parsing. The handling of COUNT, BYSETPOS, BYWEEKNO, EXDATE and EXRULE,
+and the format function was supplied by Joe Cool snoopyjc@gmail.com
 https://github.com/snoopyjc
 
 ## Author
+
 Ken Van Haren [@squaredloss](http://twitter.com/squaredloss)
 
+[0]: http://github.com/kvh/recurrent
 [1]: http://www.kanzaki.com/docs/ical/rrule.html
 [2]: https://pypi.org/project/python-dateutil
 [3]: https://github.com/bear/parsedatetime
